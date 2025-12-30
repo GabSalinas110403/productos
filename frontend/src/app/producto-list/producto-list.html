@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Listadod de productos</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Producto</th>
+                <th>Codigo de barras</th>
+                <th>Marca</th>
+                <th>Costo</th>
+                <th>Estatus</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let p of productos">
+                <td> {{ p.id}}</td>
+                <td> {{ p.producto}}</td>
+                <td> {{ p.codigobarras}}</td>
+                <td> {{ p.marca}}</td>
+                <td> {{ p.costo}}</td>
+                <td> {{ p.estatus}}</td>
+                <td>
+                    <button  type="button" class="btn btn-primary" (click)="editar(p.id)">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="eliminar(p.id)">Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
